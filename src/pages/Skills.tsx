@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code, Brain, Laptop, Settings, Languages } from 'lucide-react';
+import { Code, Brain, Laptop, Settings, Languages, Database } from 'lucide-react';
 import Section from '@/components/Section';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -24,6 +24,11 @@ const Skills = () => {
       title: "Tools & Technologies",
       icon: Settings,
       skills: ["Git", "VSCode", "Figma", "Blender", "Jira"]
+    },
+    {
+      title: "Databases",
+      icon: Database,
+      skills: ["MongoDB", "MySQL"]
     },
     {
       title: "Languages",

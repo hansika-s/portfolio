@@ -11,7 +11,7 @@ const Experience = () => {
     },
     {
       title: "Research Assistant",
-      company: "German Research Center for Artificial Intelligence(DFKI), Kaiserslautern",
+      company: "DFKI Kaiserslautern",
       period: "10/2023 - 03/2025",
       description: (
         <>Smart Worker Assistance - worked within the projects: InCoRAP, <a href="https://youtu.be/XqUhCVUpXRY?feature=shared&t=252" target="_blank" rel="noopener noreferrer" className="text-primary underline">KI4ETA</a> and Twin4Trucks in the areas of XR and Computer Vision.</>
@@ -34,15 +34,13 @@ const Experience = () => {
   const education = [
     {
       degree: "M.Sc Computer Science",
-      school: "Rheinland-Pfälzische Technische Universität Kaiserslautern, Germany",
+      school: "RPTU Kaiserslautern, Germany",
       period: "2021 - Present"
-      // description: "Specialized in AI/ML and XR technologies with focus on human-computer interaction."
     },
     {
       degree: "B.Tech Computer Science and Engineering",
       school: "Manipal University Jaipur, India",
       period: "2017 - 2021"
-      // description: "Graduated Magna Cum Laude with focus on software engineering and algorithms."
     }
   ];
 
@@ -77,7 +75,7 @@ const Experience = () => {
             </h2>
           </motion.div>
           
-          <div className="space-y-16">
+          <div className="space-y-8">
             {workExperience.map((job, index) => (
               <motion.div
                 key={index}
@@ -85,12 +83,15 @@ const Experience = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="space-y-3"
+                className="bg-card border border-border rounded-lg p-6 space-y-4"
               >
-                <h3 className="text-xl font-medium text-foreground">{job.title}</h3>
-                <p className="text-primary font-medium flex items-center gap-2">
-                  {job.company} <span className="text-muted-foreground">|</span> <span className="text-muted-foreground font-mono text-sm">{job.period}</span>
-                </p>
+                <div className="flex justify-between items-start gap-4">
+                  <h3 className="text-xl font-medium text-foreground flex-1">{job.title}</h3>
+                  <span className="text-muted-foreground font-mono text-sm shrink-0 bg-muted px-2 py-1 rounded text-xs">
+                    {job.period}
+                  </span>
+                </div>
+                <p className="text-primary font-medium">{job.company}</p>
                 <p className="text-muted-foreground leading-relaxed">{job.description}</p>
               </motion.div>
             ))}
@@ -112,7 +113,7 @@ const Experience = () => {
             </h2>
           </motion.div>
           
-          <div className="space-y-16">
+          <div className="space-y-8">
             {education.map((edu, index) => (
               <motion.div
                 key={index}
@@ -120,13 +121,15 @@ const Experience = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="space-y-3"
+                className="bg-card border border-border rounded-lg p-6 space-y-4"
               >
-                <h3 className="text-xl font-medium text-foreground">{edu.degree}</h3>
-                <p className="text-primary font-medium flex items-center gap-2">
-                  {edu.school} <span className="text-muted-foreground">|</span> <span className="text-muted-foreground font-mono text-sm">{edu.period}</span>
-                </p>
-                {/* <p className="text-muted-foreground leading-relaxed">{edu.description}</p> */}
+                <div className="flex justify-between items-start gap-4">
+                  <h3 className="text-xl font-medium text-foreground flex-1">{edu.degree}</h3>
+                  <span className="text-muted-foreground font-mono text-sm shrink-0 bg-muted px-2 py-1 rounded text-xs">
+                    {edu.period}
+                  </span>
+                </div>
+                <p className="text-primary font-medium">{edu.school}</p>
               </motion.div>
             ))}
           </div>
