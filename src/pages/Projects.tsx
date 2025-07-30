@@ -50,6 +50,11 @@ const Projects = () => {
     // }
   ];
 
+  // Function to get the primary link (prioritize liveUrl over githubUrl)
+  const getPrimaryLink = (project) => {
+    return project.liveUrl || project.githubUrl;
+  };
+
   return (
     <div className="pt-20">
       <Section>
@@ -74,45 +79,52 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="group"
+              className="group h-full"
             >
-              <Card className="border-border hover:shadow-lg transition-all duration-300 h-full">
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-xl font-medium text-foreground group-hover:text-primary transition-colors">
-                      {project.title}
-                    </CardTitle>
-                    <div className="flex gap-2">
-                    {project.githubUrl && (
-                      <Button size="sm" variant="ghost" asChild>
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4" />
-                        </a>
-                      </Button>
-                    )}
-                      {project.liveUrl && (
-                        <Button size="sm" variant="ghost" asChild>
-                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="h-4 w-4" />
-                          </a>
-                        </Button>
-                      )}
+              <a 
+                href={getPrimaryLink(project)} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
+                <Card className="border-border hover:shadow-lg transition-all duration-300 h-full cursor-pointer">
+                  <CardHeader>
+                    <div className="flex justify-between items-start mb-2">
+                      <CardTitle className="text-xl font-medium text-foreground group-hover:text-primary transition-colors">
+                        {project.title}
+                      </CardTitle>
+                      <div className="flex gap-2" onClick={(e) => e.stopPropagation()}>
+                        {project.githubUrl && (
+                          <Button size="sm" variant="ghost" asChild>
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                              <Github className="h-4 w-4" />
+                            </a>
+                          </Button>
+                        )}
+                        {project.liveUrl && (
+                          <Button size="sm" variant="ghost" asChild>
+                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </Button>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <Badge key={techIndex} variant="secondary" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
             </motion.div>
           ))}
         </div>
