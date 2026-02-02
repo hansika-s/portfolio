@@ -68,7 +68,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="p-6 rounded-lg bg-accent/20 border border-border/50">
+            {/* <div className="p-6 rounded-lg bg-accent/20 border border-border/50">
               <div className="flex items-center gap-3 mb-3 justify-center">
                 <div className="w-2 h-2 rounded-full bg-primary"></div>
                 <p className="font-medium text-foreground">Currently Available</p>
@@ -76,7 +76,7 @@ const Contact = () => {
               <p className="text-sm text-muted-foreground leading-relaxed text-center">
                 I'm currently seeking full-time opportunities. Let's discuss how we can work together!
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
