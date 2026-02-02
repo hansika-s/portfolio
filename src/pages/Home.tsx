@@ -53,7 +53,7 @@ const Home = () => {
               className="space-y-4"
             >
               <p className="text-foreground text-lg leading-relaxed max-w-2xl mx-auto">
-                Hi, I’m a Computer Science graduate student, currently interning at Continental in VR. I enjoy working at the intersection of design and development.             
+                Software Engineer | VR/AR
               </p>
             </motion.div>
 

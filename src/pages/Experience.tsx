@@ -4,9 +4,15 @@ import { Laptop, GraduationCap } from 'lucide-react';
 const Experience = () => {
   const workExperience = [
     {
+      title: "Junior Software Developer",
+      company: "Draxon GmbH",
+      period: "10/2025 - Present",
+      description: "Unity Development - VR Training in Airport Ground Handling Operations."
+    },
+    {
       title: "3D and Virtual Reality Development - Intern",
       company: "Continental Automotive Technologies",
-      period: "04/2025 - Present",
+      period: "04/2025 - 09/2025",
       description: "Contributing to development of Generative AI based Digital Vehicle Personalization."
     },
     {
@@ -35,7 +41,7 @@ const Experience = () => {
     {
       degree: "M.Sc Computer Science",
       school: "RPTU Kaiserslautern, Germany",
-      period: "2021 - Present"
+      period: "2021 - 2024"
     },
     {
       degree: "B.Tech Computer Science and Engineering",
