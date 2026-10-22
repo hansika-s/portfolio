@@ -53,7 +53,7 @@ const Home = () => {
               className="space-y-4"
             >
               <p className="text-foreground text-lg leading-relaxed max-w-2xl mx-auto">
-                Software Engineer | VR/AR
+                Software Engineer
               </p>
             </motion.div>
 

@@ -6,7 +6,7 @@ const Experience = () => {
     {
       title: "Junior Software Developer",
       company: "Draxon GmbH",
-      period: "10/2025 - Present",
+      period: "10/2025 - 06/2026",
       description: "Unity Development - VR Training in Airport Ground Handling Operations."
     },
     {
